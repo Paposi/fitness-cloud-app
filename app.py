@@ -22,7 +22,7 @@ def clean_date_string(raw_val):
         return match.group(1)
     return val_str
 
-@st.cache_data(ttl=10)
+@st.cache_data(ttl=120)
 def load_data_from_sheet(sheet_name):
     try:
         response = requests.get(WEB_APP_URL, params={"sheet_name": sheet_name})
